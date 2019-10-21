@@ -4,7 +4,7 @@ import "../App.css"
 
 const SelectCard = ({ data, numberOfQuestion, setAnswer }) => {
     const result = (indexOfAnswerrArr) => {
-        const answer = data.answer[indexOfAnswerrArr];
+        const answer = data.answers[indexOfAnswerrArr];
         setAnswer(answer.point)
     }
     return (
@@ -18,13 +18,11 @@ const SelectCard = ({ data, numberOfQuestion, setAnswer }) => {
                         return (
                             <option value={index}>{item.answer}</option>
                         )
-                    })}
+                    })
+                    }
                 </select>
             </div>
         </div>
-
-
-
     )
 }
 
