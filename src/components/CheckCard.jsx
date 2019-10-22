@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "../App.scss"
 
 const CheckCard = ({ data, numberOfQuestion }) => {
     return (
 
         <div className="booksList col-lg-6">
-            <h1> Вопрос №: {numberOfQuestion}</h1>
+            <h1> Вопрос №: {numberOfQuestion + 1}</h1>
             <h2>{data.title}</h2>
             <div className="card-body" >
                 {data.answers.map((item) => {

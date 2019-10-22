@@ -2,19 +2,18 @@ export const questionsList = [
     {
         type: "TEXT",
         title: "Первая столица Украины",
-        answer: 'Харьков',
-        point: 1,
+        answers: 'Харьков',
+        points: 1,
     },
     {
         type: "TEXT",
         title: "Столица США",
-        answer: 'Вашингтон',
-        point: 1,
+        answers: 'Вашингтон',
+        points: 1,
     },
     {
         type: "CHECKBOX",
         title: "Выберите страны в Европе",
-        question: ["охотничьи колбаски", "сосиски", "моцарелла", "баклажан", "томаты", "лук", "перец", "соус томатный", "соус BBQ", "зеленый соус", "майонез"],
         answers: [
             {
                 answer: "Франиция",
@@ -55,12 +54,12 @@ export const questionsList = [
             {
                 answer: "США",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
             {
                 answer: "Украина",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
         ]
     },
@@ -71,14 +70,17 @@ export const questionsList = [
         answers: [
             {
                 answer: "Планета",
+                isTrue: false,
                 points: 0,
             },
             {
                 answer: "Звезда",
+                isTrue: true,
                 points: 1,
             },
             {
                 answer: "Комета",
+                isTrue: false,
                 points: 0,
             },
         ]
@@ -96,12 +98,12 @@ export const questionsList = [
             {
                 answer: "Страна",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
             {
                 answer: "Материк",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
         ]
     },
@@ -122,17 +124,17 @@ export const questionsList = [
             {
                 answer: "Железо",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
             {
                 answer: "Медь",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
             {
                 answer: "Олово",
                 isTrue: false,
-                points: 1,
+                points: 0,
             },
         ]
     },
