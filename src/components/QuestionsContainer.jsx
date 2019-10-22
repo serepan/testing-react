@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { questionsList } from './../data/questionsList'
 import TextCard from "./TextCard"
 import SelectCard from "./SelectCard"
 import CheckCard from "./CheckCard"
 import RadioCard from "./RadioCard"
+import Timer from "./Timer"
 
 
 const QuestionsContainer = ({ data }) => {
@@ -24,18 +24,21 @@ const QuestionsContainer = ({ data }) => {
 
     return (
         <div className="row">
-
+            <div className="booksList col-lg-6">
+                <h1>Странные вопросы</h1>
+                <Timer/>
+            </div>
             {
                 data.map((item, index) => {
                     switch (item.type) {
                         case "TEXT":
-                            return <TextCard data={item} numberOfQuestion={index + 1} />
+                            return <TextCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index + 1} />
                         case "CHECKBOX":
-                            return <CheckCard data={item} numberOfQuestion={index + 1} />
+                            return <CheckCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index + 1} />
                         case "RADIO":
-                            return <RadioCard data={item} numberOfQuestion={index + 1} />
+                            return <RadioCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index + 1} />
                         case "SELECT":
-                            return <SelectCard data={item}
+                            return <SelectCard key={Math.random(new Date().getMilliseconds())} data={item}
                                 numberOfQuestion={index + 1}
                                 setAnswer={setAnswer(index)} />
                         default: return null;

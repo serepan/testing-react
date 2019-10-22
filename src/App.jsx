@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { questionsList } from './data/questionsList'
 import QuestionsContainer from './components/QuestionsContainer'
-import './App.css';
+import './App.scss';
 
 
 const App = () => {
-
-  // useEffect(() => {
-  //   axios.get('https://www.googleapis.com/books/v1/volumes?q=quilting=3:keyes&key=AIzaSyCDl054-0cMSrKLWD8skCwpQ1URdZYb0Ks').then(res => {
-  //     setBooks(res.data.items)
-  //     console.log(res.data.items)
-  //   })
-  // }, [])
+  const [timer, setTimer] = useState(0);
+  useEffect(() => {
+    setInterval(() => {
+      setTimer(new Date().setSeconds(0))
+    }, 1000)
+  }, [timer]);
 
   return (
     <div className="container">
-     <QuestionsContainer data={questionsList}/>
+      <QuestionsContainer data={questionsList} />
     </div>
   )
 }
