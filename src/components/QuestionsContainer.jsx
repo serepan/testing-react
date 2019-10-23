@@ -6,7 +6,7 @@ import RadioCard from "./RadioCard"
 // import Timer from "./Timer"
 
 
-const QuestionsContainer = ({ data }) => {
+const QuestionsContainer = ({ data, setInitialState }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));
 
     // const [timer, setTimer] = useState(60);
@@ -45,6 +45,7 @@ const QuestionsContainer = ({ data }) => {
         <div className="row">
             <div className="booksList col-lg-6">
                 <h1>Странные вопросы</h1>
+                <button className="btn btn-primary" onClick={() => setInitialState('')}>На главную</button>
 
             </div>
             {

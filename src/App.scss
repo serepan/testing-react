@@ -17,34 +17,6 @@ body {
   text-align: center;
   box-shadow: 0 0 5px 2px #fff;
 
-  .btn {
-    max-width: 200px;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border-radius: 20px/50%;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &-primary {
-      background: rgb(0, 255, 72);
-
-      &:hover {
-        background: rgba(38, 22, 102, 0.598);
-      }
-    }
-
-    &-secondary {
-      background: rgb(255, 0, 0);
-
-      &:hover {
-        background: rgba(38, 22, 102, 0.598);
-      }
-    }
-  }
-
   [type="text"],
   select {
     width: 90%;
@@ -73,5 +45,33 @@ body {
     color: white;
     font-size: 25px;
     font-weight: bold;
+  }
+}
+
+.btn {
+  max-width: 200px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 20px/50%;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &-primary {
+    background: rgb(0, 255, 72);
+
+    &:hover {
+      background: rgba(38, 22, 102, 0.598);
+    }
+  }
+
+  &-secondary {
+    background: rgb(255, 0, 0);
+
+    &:hover {
+      background: rgba(38, 22, 102, 0.598);
+    }
   }
 }
