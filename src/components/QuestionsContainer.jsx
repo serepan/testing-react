@@ -51,9 +51,9 @@ const QuestionsContainer = ({ data }) => {
                 data.map((item, index) => {
                     switch (item.type) {
                         case "TEXT":
-                            return <TextCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index}  />
+                            return <TextCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
                         case "CHECKBOX":
-                            return <CheckCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
+                            return <CheckCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
                         case "RADIO":
                             return <RadioCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
                         case "SELECT":

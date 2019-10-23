@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import "../App.scss"
 
-const TextCard = ({ data, numberOfQuestion, setAnswerText }) => {
-    const result = (e) => {                                         // попытки работать с текстовым полем
-        let answer = e.target.value;
-        if (answer.includes('а')) { setAnswerText(1) }
-        console.log(setAnswerText(1))
-        //   else setAnswerText(0)
+const TextCard = ({ data, numberOfQuestion, setAnswer }) => {
+    const [inputValue, setInputValue] = useState('');                                      // попытки работать с текстовым полем
+
+
+    const answerValidator = (value) => {
+        (value.toLowerCase() === data.answers[0].toString().toLowerCase()) ? setAnswer(1) : setAnswer(0)
     }
+
 
     return (
         <div className="booksList col-lg-6">
             <h1> Вопрос №: {numberOfQuestion + 1}</h1>
             <h2>{data.title}</h2>
             <div className="card-body">
-                <input type="text" onChange={result} placeholder="Введите Ваш вариант ответа..." />
-                <button className="btn btn-primary" onClick={result} >Подтвердить</button>
+                <input type="text" placeholder="Введите Ваш вариант ответа..." onChange={(e) => { answerValidator(e.target.value) }} />
             </div>
         </div>
 

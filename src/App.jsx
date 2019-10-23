@@ -32,16 +32,16 @@ const App = () => {
   }, [isActive, seconds]);
 
   return (
-    <div className="container">
-      <Timer
-        seconds={seconds}
-        isActive={isActive}
-        reset={reset}
-        start={start}
-      />
-      {isActive && seconds >=0 && <QuestionsContainer data={questionsList} />}
-      {/* <QuestionsContainer data={questionsList} /> */}
-    </div>
+    // <div className="container">
+    //   <Timer
+    //     seconds={seconds}
+    //     isActive={isActive}
+    //     reset={reset}
+    //     start={start}
+    //   />
+    //   {isActive && seconds >=0 && <QuestionsContainer data={questionsList} />}
+      <QuestionsContainer data={questionsList} />
+    // </div>
   )
 }
 export default App;

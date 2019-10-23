@@ -16,7 +16,7 @@ export const questionsList = [
         title: "Выберите страны в Европе",
         answers: [
             {
-                answer: "Франиция",
+                answer: "Франция",
                 isTrue: true,
                 points: 1,
             },
