@@ -6,7 +6,7 @@ const TextCard = ({ data, numberOfQuestion, setAnswer }) => {
 
 
     const answerValidator = (value) => {
-        (value.toLowerCase() === data.answers[0].toString().toLowerCase()) ? setAnswer(1) : setAnswer(0)
+        (value.toLowerCase() === data.answers.toString().toLowerCase()) ? setAnswer(1) : setAnswer(0)
     }
 
 
