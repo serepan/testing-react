@@ -16,10 +16,15 @@ const QuestionsContainer = ({ data, setInitialState }) => {
     //   }, 1000)
     // }, [timer]);
 
-
     useEffect(() => {
         console.log(answersModel)
     }, [answersModel])
+
+    const resultTest = (arr) => {
+        let newArr = arr.reduce((a, b) => a + b);
+        console.log(newArr)
+        return newArr;
+    }
 
     const setAnswer = (index) => {
         return (pointerCount) => {
@@ -29,17 +34,6 @@ const QuestionsContainer = ({ data, setInitialState }) => {
             setAnswersModel(arr)
         }
     }
-
-    // const setAnswerText = (e) => {           // попытки работать с текстовым полем
-    //     return (pointerCount) => {
-    //         let result = e.target.value;
-    //         let arr = [...answersModel];
-    //         if (result.includes(data.answers)) {
-    //
-    //         }
-    //         setAnswersModel(arr)
-    //     }
-    // }
 
     return (
         <div className="row">
@@ -56,15 +50,19 @@ const QuestionsContainer = ({ data, setInitialState }) => {
                         case "CHECKBOX":
                             return <CheckCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
                         case "RADIO":
-                            return <RadioCard key={Math.random(new Date().getMilliseconds())} data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
+                            return <RadioCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
                         case "SELECT":
-                            return <SelectCard key={Math.random(new Date().getMilliseconds())} data={item}
+                            return <SelectCard data={item}
                                 numberOfQuestion={index}
                                 setAnswer={setAnswer(index)} />
                         default: return null;
                     }
                 })
             }
+            <div className="booksList col-lg-6">
+                <button onClick={() => resultTest(answersModel)} className="btn btn-secondary">Посмотреть результат</button>
+            </div>
+
         </div>
 
 

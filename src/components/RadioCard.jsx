@@ -13,9 +13,10 @@ const RadioCard = ({ data, numberOfQuestion, setAnswer }) => {
             <div className="card-body" >
                 {data.answers.map((item, index) => {
                     return (
-                        <label key={data.title + Math.random(new Date().getMilliseconds())}>
-                            <input type="radio" name="radio" value={index} onChange={(e) => result(e.target.value)} />{item.answer}
-                        </label>
+                        <>
+                            <label htmlFor={`${data.title}-${index}`}>{item.answer}</label>
+                            <input type="radio" name="radio" value={index} onChange={(e) => result(e.target.value)} id={`${data.title}-${index}`} />
+                        </>
                     )
                 })
                 }

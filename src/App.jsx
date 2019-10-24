@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import * as data from './data/questionsList'
 import QuestionsContainer from './components/QuestionsContainer'
 import Timer from './components/Timer'
 import './App.scss';
 
 
-const Buttons = ({ setInitialState }) => {
+const Buttons = ({setInitialState}) => {
+
+
   return (
     <div className="booksList">
       <button onClick={() => setInitialState('geo')} className="btn btn-primary">Тест по географии</button>
-      <button onClick={() => setInitialState('bio')} className="btn btn-primary" >Тест по биологии</button>
+      <button onClick={() => setInitialState('bio')} className="btn btn-secondary">Тест по биологии</button>
     </div>
   )
 }
 
 const App = () => {
   const [seconds, setSeconds] = useState(120);
+
   // const [isActive, setIsActive] = useState(false);
 
-  // const [geo, setGeo] = useState(false);
-  // const [bio, setBio] = useState(false);
 
   const [initialState, setInitialState] = useState('');
 
@@ -45,6 +46,30 @@ const App = () => {
   //   }
   //   return () => clearInterval(interval);
   // }, [isActive, seconds]);
+
+
+
+
+  //  поппытки с useReducer
+  // const geo = () => dispatch({ type: "geo" });
+  // const bio = () => dispatch({ type: "bio" });
+
+
+  // const initialState = <Buttons />;
+
+  // const [state, dispatch] = useReducer(reducer, initialState);
+
+  // function reducer(state, action) {
+  //   switch (action.type) {
+  //     case "geo":
+  //       return { ...state, ...<QuestionsContainer data={data.questionsList} /> };
+  //     case "bio":
+  //       return { ...state, ...<QuestionsContainer data={data.questionsList2} /> };
+  //     default:
+  //       return <Buttons geo={geo} bio={bio} />;
+  //   }
+  // }
+
 
   return (
     (initialState === "geo")

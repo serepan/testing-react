@@ -153,38 +153,38 @@ const questionsList2 = [
         answers: [
             { answer: 'рибосома', isTrue: false, points: 0 },
             { answer: 'мембрана', isTrue: true, points: 1 },
-            { answeransweranswer: 'митохондрия', isTrue: false, points: 0 },
-            { answeransweranswer: 'пластида', isTrue: false, points: 0 }
+            { answer: 'митохондрия', isTrue: false, points: 0 },
+            { answer: 'пластида', isTrue: false, points: 0 }
         ],
     },
 
     {
         title: 'В делении клеток принимают участие:',
-        type: "CHECK",
-        answers: [{ answeransweranswer: ' клеточный центр ', isTrue: true, points: 1 },
-        { answeransweranswer: 'рибосома', isTrue: true, points: 1 },
-        { answeransweranswer: 'хлоропласт', isTrue: false, points: 0 },
-        { answeransweranswer: 'вакуоли', isTrue: false, points: 0 }
+        type: "CHECKBOX",
+        answers: [{ answer: ' клеточный центр ', isTrue: true, points: 1 },
+        { answer: 'рибосома', isTrue: true, points: 1 },
+        { answer: 'хлоропласт', isTrue: false, points: 0 },
+        { answer: 'вакуоли', isTrue: false, points: 0 }
         ],
     },
 
     {
         title: 'Самые маленькие косточки тела человека располагаются в:',
         type: "RADIO",
-        answers: [{ answeranswer: 'наружном ухе', isTrue: false, points: 0 },
-        { answeranswer: 'внутреннем ухе ', isTrue: true, points: 1 },
-        { answeranswer: 'среднем ухе', isTrue: false, points: 0 },
-        { answeranswer: 'малом ухе', isTrue: false, points: 0 },
+        answers: [{ answer: 'наружном ухе', isTrue: false, points: 0 },
+        { answer: 'внутреннем ухе ', isTrue: true, points: 1 },
+        { answer: 'среднем ухе', isTrue: false, points: 0 },
+        { answer: 'малом ухе', isTrue: false, points: 0 },
         ],
     },
 
     {
         title: 'Гипофиз выделяет:',
         type: "SELECT",
-        answers: [{ answeranswer: 'адреналин', isTrue: false, points: 0 },
-        { answeranswer: 'тироксин', isTrue: false, points: 0 },
-        { answeranswer: 'гормон роста', isTrue: true, points: 1 },
-        { answeranswer: 'инсулин', isTrue: false, points: 0 },
+        answers: [{ answer: 'адреналин', isTrue: false, points: 0 },
+        { answer: 'тироксин', isTrue: false, points: 0 },
+        { answer: 'гормон роста', isTrue: true, points: 1 },
+        { answer: 'инсулин', isTrue: false, points: 0 },
         ],
     },
 
@@ -200,7 +200,7 @@ const questionsList2 = [
 
     {
         title: 'Что происходит под действием ферментов?',
-        type: "CHECK",
+        type: "CHECKBOX",
         answers: [{ answer: 'разрушение клеток', isTrue: true, points: 1 },
         { answer: 'синтез и распад веществ в клетке', isTrue: true, points: 1 },
         { answer: 'деление клеток', isTrue: false, points: 0 },
