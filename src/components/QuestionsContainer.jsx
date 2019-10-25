@@ -3,6 +3,8 @@ import TextCard from "./TextCard"
 import SelectCard from "./SelectCard"
 import CheckCard from "./CheckCard"
 import RadioCard from "./RadioCard"
+import ClickToResult from './ClickToResult'
+import { Link } from 'react-router-dom';
 // import Timer from "./Timer"
 
 
@@ -39,7 +41,7 @@ const QuestionsContainer = ({ data, setInitialState }) => {
         <div className="row">
             <div className="booksList col-lg-6">
                 <h1>Странные вопросы</h1>
-                <button className="btn btn-primary" onClick={() => setInitialState('')}>На главную</button>
+                <Link className="btn btn-primary" to='/'>На главную</Link>
 
             </div>
             {
@@ -59,10 +61,9 @@ const QuestionsContainer = ({ data, setInitialState }) => {
                     }
                 })
             }
-            <div className="booksList col-lg-6">
-                <button onClick={() => resultTest(answersModel)} className="btn btn-secondary">Посмотреть результат</button>
-            </div>
-
+        
+            <ClickToResult
+                answersModel={answersModel} />
         </div>
 
 

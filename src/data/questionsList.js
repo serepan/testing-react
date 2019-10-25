@@ -4,6 +4,7 @@ const questionsList = [
         title: "Первая столица Украины",
         answers: 'Харьков',
         points: 1,
+        
     },
     {
         type: "TEXT",
