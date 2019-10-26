@@ -5,28 +5,39 @@ import CheckCard from "./CheckCard"
 import RadioCard from "./RadioCard"
 import ClickToResult from './ClickToResult'
 import { Link } from 'react-router-dom';
-// import Timer from "./Timer"
+import Timer from "./Timer"
 
 
-const QuestionsContainer = ({ data, setInitialState }) => {
+const QuestionsContainer = ({ data, isActive, setIsActive }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));
+    // const [seconds, setSeconds] = useState(120);
 
-    // const [timer, setTimer] = useState(60);
+    // const start = () => {
+    //     setIsActive(!isActive);
+    // }
+
+    // const reset = () => {
+    //     setSeconds(120);
+    //     setIsActive(false);
+    // }
+
     // useEffect(() => {
-    //   setInterval(() => {
-    //     setTimer(new Date().setSeconds(0, 0))
-    //   }, 1000)
-    // }, [timer]);
+    //     let interval = null;
+    //     if (isActive) {
+    //         interval = setInterval(() => {
+    //             setSeconds((seconds) => {
+    //                 if (seconds > 0) { return --seconds }
+    //             });
+    //         }, 1000);
+    //     } else if (!isActive && seconds !== 0) {
+    //         clearInterval(interval);
+    //     }
+    //     return () => clearInterval(interval);
+    // }, [isActive, seconds]);
 
     useEffect(() => {
         console.log(answersModel)
     }, [answersModel])
-
-    const resultTest = (arr) => {
-        let newArr = arr.reduce((a, b) => a + b);
-        console.log(newArr)
-        return newArr;
-    }
 
     const setAnswer = (index) => {
         return (pointerCount) => {
@@ -42,26 +53,49 @@ const QuestionsContainer = ({ data, setInitialState }) => {
             <div className="booksList col-lg-6">
                 <h1>Странные вопросы</h1>
                 <Link className="btn btn-primary" to='/'>На главную</Link>
-
+                <Timer />
             </div>
             {
-                data.map((item, index) => {
+                !isActive && data.map((item, index) => {
                     switch (item.type) {
                         case "TEXT":
-                            return <TextCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
-                        case "CHECKBOX":
-                            return <CheckCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
-                        case "RADIO":
-                            return <RadioCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
-                        case "SELECT":
-                            return <SelectCard data={item}
+                            return <TextCard
+                                data={item}
                                 numberOfQuestion={index}
-                                setAnswer={setAnswer(index)} />
+                                setAnswer={setAnswer(index)}
+                                // isActive={isActive}
+                                // setIsActive={setIsActive}
+                            />
+                        case "CHECKBOX":
+                            return !isActive && <CheckCard
+                                data={item}
+                                numberOfQuestion={index}
+                                setAnswer={setAnswer(index)}
+                                // isActive={isActive}
+                                // setIsActive={setIsActive}
+                            />
+                        case "RADIO":
+                            return <RadioCard
+                                data={item}
+                                numberOfQuestion={index}
+                                setAnswer={setAnswer(index)}
+                                // isActive={isActive}
+                                // setIsActive={setIsActive}
+                            />
+                        case "SELECT":
+                            return !isActive && <SelectCard data={item}
+                                numberOfQuestion={index}
+                                setAnswer={setAnswer(index)}
+                                // isActive={isActive}
+                                // setIsActive={setIsActive}
+                            />
                         default: return null;
+
                     }
                 })
+
             }
-        
+
             <ClickToResult
                 answersModel={answersModel} />
         </div>

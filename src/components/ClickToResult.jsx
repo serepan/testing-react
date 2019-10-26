@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const clickToResult = (answersModel) => {
+const ClickToResult = (answersModel) => {
 
     const setToLocalStorage = () => {
         localStorage.setItem('answers', JSON.stringify(answersModel))
@@ -13,4 +13,4 @@ const clickToResult = (answersModel) => {
     )
 }
 
-export default clickToResult;
+export default ClickToResult;

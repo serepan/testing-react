@@ -10,10 +10,17 @@ import './App.scss';
 
 
 const App = () => {
+  const [isActive, setIsActive] = useState(false);
   const [seconds, setSeconds] = useState(120);
-  // const [isActive, setIsActive] = useState(false);
 
+  //   const start = () => {
+  //     setIsActive(!isActive);
+  // }
 
+  // const reset = () => {
+  //     setSeconds(120);
+  //     setIsActive(false);
+  // }
 
   // const start = () => {
   //   setIsActive(!isActive);
@@ -53,19 +60,23 @@ const App = () => {
         />
         <Route
           path="/QuestionsContainer"
-          render={(props) => (
+          render={(props) => (!isActive &&
             <QuestionsContainer
               {...props}
               data={data.questionsList}
+              isActive={isActive}
+              setIsActive={setIsActive}
             />
           )}
         />
         <Route
           path="/QuestionsContainer2"
-          render={(props) => (
+          render={(props) => (!isActive &&
             <QuestionsContainer
               {...props}
               data={data.questionsList2}
+              isActive={isActive}
+              setIsActive={setIsActive}
             />
           )}
         />

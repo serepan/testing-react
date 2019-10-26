@@ -5,18 +5,12 @@ import CheckCard from "./CheckCard"
 import RadioCard from "./RadioCard"
 import ClickToResult from "./ClickToResult"
 import { Link } from 'react-router-dom';
-// import Timer from "./Timer"
+import Timer from "./Timer"
 
 
-const QuestionsContainer = ({ data, setInitialState }) => {
+const QuestionsContainer = ({ data }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));
-
-    // const [timer, setTimer] = useState(60);
-    // useEffect(() => {
-    //   setInterval(() => {
-    //     setTimer(new Date().setSeconds(0, 0))
-    //   }, 1000)
-    // }, [timer]);
+    const { isActive, setIsActive } = useState(false);
 
     useEffect(() => {
         console.log(answersModel)
@@ -42,10 +36,10 @@ const QuestionsContainer = ({ data, setInitialState }) => {
             <div className="booksList col-lg-6">
                 <h1>Странные вопросы</h1>
                 <Link className="btn btn-primary" to='/'>На главную</Link>
-
+                <Timer />
             </div>
             {
-                data.map((item, index) => {
+                isActive && data.map((item, index) => {
                     switch (item.type) {
                         case "TEXT":
                             return <TextCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
@@ -61,8 +55,8 @@ const QuestionsContainer = ({ data, setInitialState }) => {
                     }
                 })
             }
-            <ClickToResult 
-            answersModel={answersModel}/>
+            <ClickToResult
+                answersModel={answersModel} />
 
         </div>
 
