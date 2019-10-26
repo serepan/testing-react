@@ -39,7 +39,7 @@ const QuestionsContainer = ({ data }) => {
                 <Timer />
             </div>
             {
-                isActive && data.map((item, index) => {
+                !isActive && data.map((item, index) => {
                     switch (item.type) {
                         case "TEXT":
                             return <TextCard data={item} numberOfQuestion={index} setAnswer={setAnswer(index)} />
