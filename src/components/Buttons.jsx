@@ -5,8 +5,8 @@ const Buttons = () => {
 
     return (
         <div className="booksList">
-            <Link to='/QuestionsContainer' className="btn btn-primary">Geography</Link>
-            <Link to='/QuestionsContainer2' className="btn btn-secondary">Biology</Link>
+            <Link to='/geography-test' className="btn btn-primary">Geography</Link>
+            <Link to='/biology-test' className="btn btn-secondary">Biology</Link>
 
         </div>
     )

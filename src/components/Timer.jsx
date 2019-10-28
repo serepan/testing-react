@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Timer = (props) => {
 
-  // const {isActive, setIsActive, seconds, setSeconds} = props;
-  const [isActive, setIsActive] = useState(false);
-  const [seconds, setSeconds] = useState(120);
+  const {isActive, setIsActive, seconds, setSeconds} = props;
 
   const start = () => {
       setIsActive(!isActive);
   }
 
   const reset = () => {
-      setSeconds(120);
-      setIsActive(false);
+      setSeconds(20);
+      setIsActive(!isActive);
   }
 
   useEffect(() => {

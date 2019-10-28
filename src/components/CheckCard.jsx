@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "../App.scss"
 
 const initialAnswers = answers => {
@@ -8,7 +8,7 @@ const initialAnswers = answers => {
 }
 
 const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
-    const [arrOfAnswers, setArrOfAnswers] = useState(initialAnswers(data.answers))
+    const [arrOfAnswers] = useState(initialAnswers(data.answers))
 
     const checkFunction = (e, index) => {
         console.log(e.target.checked, index)

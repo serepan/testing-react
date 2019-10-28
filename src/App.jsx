@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import * as data from './data/questionsList';
 import QuestionsContainer from './components/QuestionsContainer';
-import Timer from './components/Timer';
 import Result from './components/Result';
 import Buttons from './components/Buttons';
 import './App.scss';
@@ -10,41 +9,7 @@ import './App.scss';
 
 
 const App = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [seconds, setSeconds] = useState(120);
-
-  //   const start = () => {
-  //     setIsActive(!isActive);
-  // }
-
-  // const reset = () => {
-  //     setSeconds(120);
-  //     setIsActive(false);
-  // }
-
-  // const start = () => {
-  //   setIsActive(!isActive);
-  // }
-
-  // const reset = () => {
-  //   setSeconds(120);
-  //   setIsActive(false);
-  // }
-
-  // useEffect(() => {
-  //   let interval = null;
-  //   if (isActive) {
-  //     interval = setInterval(() => {
-  //       setSeconds((seconds) => {
-  //         if (seconds > 0) { return --seconds }
-  //       });
-  //     }, 1000);
-  // } else if (!isActive && seconds !== 0) {
-  //   clearInterval(interval);
-  //   }
-  //   return () => clearInterval(interval);
-  // }, [isActive, seconds]);
-
+ 
   return (
     <BrowserRouter>
       <div className="App">
@@ -59,7 +24,7 @@ const App = () => {
 
         />
         <Route
-          path="/QuestionsContainer"
+          path="/geography-test"
           render={(props) => (
             <QuestionsContainer
               {...props}
@@ -70,7 +35,7 @@ const App = () => {
           )}
         />
         <Route
-          path="/QuestionsContainer2"
+          path="/biology-test"
           render={(props) => (
             <QuestionsContainer
               {...props}

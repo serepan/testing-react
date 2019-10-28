@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "../App.scss"
 
 const RadioCard = ({ data, numberOfQuestion, setAnswer }) => {
@@ -13,10 +13,10 @@ const RadioCard = ({ data, numberOfQuestion, setAnswer }) => {
             <div className="card-body" >
                 {data.answers.map((item, index) => {
                     return (
-                        <>
+                        <div key={index - 68}>
                             <label htmlFor={`${data.title}-${index}`}>{item.answer}</label>
                             <input type="radio" name="radio" value={index} onChange={(e) => result(e.target.value)} id={`${data.title}-${index}`} />
-                        </>
+                        </div>
                     )
                 })
                 }

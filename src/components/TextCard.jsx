@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "../App.scss"
 
 const TextCard = ({ data, numberOfQuestion, setAnswer }) => {
-    const [inputValue, setInputValue] = useState('');                                      // попытки работать с текстовым полем
-
 
     const answerValidator = (value) => {
         (value.toLowerCase() === data.answers.toString().toLowerCase()) ? setAnswer(1) : setAnswer(0)
     }
-
 
     return (
         <div className="booksList col-lg-6">

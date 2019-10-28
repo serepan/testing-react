@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Result = () => {
 
     let answers = JSON.parse(localStorage.getItem('answers')) || [];
-console.log(answers)
+    console.log(answers)
 
-
-    let result = answers
-    .filter(el => typeof el === 'number')
-    .reduce((a, b) => a + b);
-
+    let result = answers.length && answers
+        .filter(el => typeof el === 'number')
+        .reduce((a, b) => a + b);
 
     return (
         <div className="row">
