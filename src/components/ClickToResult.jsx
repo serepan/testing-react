@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ClickToResult = (answersModel) => {
+const ClickToResult = ({answersModel}) => {
 
     const setToLocalStorage = () => {
-        localStorage.setItem('answers', JSON.stringify(answersModel))
+        let arr = [...answersModel]
+        localStorage.setItem('answers', JSON.stringify(arr))
     }
     return (
         <div className="booksList col-lg-6">

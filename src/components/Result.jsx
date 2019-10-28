@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Result = () => {
 
     let answers = JSON.parse(localStorage.getItem('answers')) || [];
+console.log(answers)
 
 
-
-    let result = answers.answersModel
+    let result = answers
     .filter(el => typeof el === 'number')
     .reduce((a, b) => a + b);
 

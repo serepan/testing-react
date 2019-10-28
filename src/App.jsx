@@ -60,23 +60,23 @@ const App = () => {
         />
         <Route
           path="/QuestionsContainer"
-          render={(props) => (!isActive &&
+          render={(props) => (
             <QuestionsContainer
               {...props}
               data={data.questionsList}
-              isActive={isActive}
-              setIsActive={setIsActive}
+              // isActive={isActive}
+              // setIsActive={setIsActive}
             />
           )}
         />
         <Route
           path="/QuestionsContainer2"
-          render={(props) => (!isActive &&
+          render={(props) => (
             <QuestionsContainer
               {...props}
               data={data.questionsList2}
-              isActive={isActive}
-              setIsActive={setIsActive}
+              // isActive={isActive}
+              // setIsActive={setIsActive}
             />
           )}
         />
