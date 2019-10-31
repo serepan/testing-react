@@ -76,6 +76,8 @@ const QuestionsContainer = ({ data }) => {
             <ClickToResult
                 answersModel={answersModel} />
 
+                {/* {seconds == 0 && Redirect} */}
+
         </div>
 
 
