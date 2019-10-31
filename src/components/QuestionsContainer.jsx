@@ -49,7 +49,7 @@ const QuestionsContainer = ({ data }) => {
                                 setAnswer={setAnswer(index)}
                             />
                         case "CHECKBOX":
-                            return !isActive && <CheckCard
+                            return <CheckCard
                                 key={index - 68}
                                 data={item}
                                 numberOfQuestion={index}
@@ -63,7 +63,7 @@ const QuestionsContainer = ({ data }) => {
                                 setAnswer={setAnswer(index)}
                             />
                         case "SELECT":
-                            return !isActive && <SelectCard
+                            return <SelectCard
                                 key={index - 68}
                                 data={item}
                                 numberOfQuestion={index}

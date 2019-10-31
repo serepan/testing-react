@@ -9,52 +9,55 @@ import './App.scss';
 
 
 const App = () => {
- 
+
   return (
+
     <BrowserRouter>
       <div className="App">
+        <div className="container">
+          <div className="row">
+            <Route
+              exact path="/"
+              render={(props) => (
+                <Buttons
+                  {...props}
+                />
+              )}
 
-        <Route
-          exact path="/"
-          render={(props) => (
-            <Buttons
-              {...props}
             />
-          )}
+            <Route
+              path="/geography-test"
+              render={(props) => (
+                <QuestionsContainer
+                  {...props}
+                  data={data.questionsList}
+                // isActive={isActive}
+                // setIsActive={setIsActive}
+                />
+              )}
+            />
+            <Route
+              path="/biology-test"
+              render={(props) => (
+                <QuestionsContainer
+                  {...props}
+                  data={data.questionsList2}
+                // isActive={isActive}
+                // setIsActive={setIsActive}
+                />
+              )}
+            />
 
-        />
-        <Route
-          path="/geography-test"
-          render={(props) => (
-            <QuestionsContainer
-              {...props}
-              data={data.questionsList}
-              // isActive={isActive}
-              // setIsActive={setIsActive}
+            <Route
+              path="/Result"
+              render={(props) => (
+                <Result
+                  {...props}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          path="/biology-test"
-          render={(props) => (
-            <QuestionsContainer
-              {...props}
-              data={data.questionsList2}
-              // isActive={isActive}
-              // setIsActive={setIsActive}
-            />
-          )}
-        />
-
-        <Route
-          path="/Result"
-          render={(props) => (
-            <Result
-              {...props}
-            />
-          )}
-        />
-
+          </div>
+        </div>
       </div>
     </BrowserRouter>
 
