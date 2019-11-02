@@ -9,7 +9,7 @@ const ClickToResult = ({ answersModel }) => {
     }
 
     return (
-        <div className="booksList col-lg-6">
+        <div className="booksList col-12">
             <Link onClick={setToLocalStorage} className="btn btn-primary" to='/Result'>Посмотреть результат</Link>
         </div>
     )

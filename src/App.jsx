@@ -4,14 +4,11 @@ import * as data from './data/questionsList';
 import QuestionsContainer from './components/QuestionsContainer';
 import Result from './components/Result';
 import Buttons from './components/Buttons';
-import './App.scss';
-;
-
+import './Scss/App.scss';
 
 const App = () => {
 
   return (
-
     <BrowserRouter>
       <div className="App">
         <div className="container">
@@ -23,7 +20,6 @@ const App = () => {
                   {...props}
                 />
               )}
-
             />
             <Route
               path="/geography-test"
@@ -31,8 +27,6 @@ const App = () => {
                 <QuestionsContainer
                   {...props}
                   data={data.questionsList}
-                // isActive={isActive}
-                // setIsActive={setIsActive}
                 />
               )}
             />
@@ -42,12 +36,9 @@ const App = () => {
                 <QuestionsContainer
                   {...props}
                   data={data.questionsList2}
-                // isActive={isActive}
-                // setIsActive={setIsActive}
                 />
               )}
             />
-
             <Route
               path="/Result"
               render={(props) => (
@@ -60,26 +51,7 @@ const App = () => {
         </div>
       </div>
     </BrowserRouter>
-
   )
-
-  // (initialState === "geo")
-  // ? <QuestionsContainer data={data.questionsList} setInitialState={setInitialState} />
-  // : (initialState === "bio")
-  //   ? <QuestionsContainer data={data.questionsList2} setInitialState={setInitialState} />
-  //   : <Buttons setInitialState={setInitialState} />
-
-
-  // <div className="container">
-  //   <Timer
-  //     seconds={seconds}
-  //     isActive={isActive}
-  //     reset={reset}
-  //     start={start}
-  //   />
-  //   {isActive && seconds >= 0 && <QuestionsContainer data={questionsList} />}
-
-  // </div>
 }
 export default App;
 

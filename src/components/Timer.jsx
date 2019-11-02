@@ -9,7 +9,7 @@ const Timer = (props) => {
   }
 
   const reset = () => {
-      setSeconds(20);
+      setSeconds(120);
       setIsActive(!isActive);
   }
 
@@ -28,8 +28,8 @@ const Timer = (props) => {
   }, [isActive, seconds]);
 
   return (
-    <div className="booksList col-lg-6">
-      <h1>Предлагаем Вам пройти небольшой тест на знание простейших вопросов по всякой всячине. На всё-провсё дается 120 секунд</h1>
+    <div className="booksList col-12 timer">
+      <h3>Предлагаем Вам пройти небольшой тест на знание простейших вопросов по всякой всячине. На всё-провсё дается 120 секунд</h3>
       <h2>{seconds}</h2>
 
       {!isActive && <button className="btn btn-primary" onClick={start}>Start</button>}

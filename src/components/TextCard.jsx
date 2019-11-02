@@ -1,5 +1,5 @@
 import React from 'react';
-import "../App.scss"
+import "./../Scss/App.scss"
 
 const TextCard = ({ data, numberOfQuestion, setAnswer }) => {
 
@@ -8,14 +8,13 @@ const TextCard = ({ data, numberOfQuestion, setAnswer }) => {
     }
 
     return (
-        <div className="booksList col-lg-6">
+        <div className="booksList col-12">
             <h1> Вопрос №: {numberOfQuestion + 1}</h1>
             <h2>{data.title}</h2>
             <div className="card-body">
                 <input type="text" placeholder="Введите Ваш вариант ответа..." onChange={(e) => { answerValidator(e.target.value) }} />
             </div>
         </div>
-
     )
 }
 

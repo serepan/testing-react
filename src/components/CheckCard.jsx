@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../App.scss"
+import "./../Scss/App.scss";
 
 const initialAnswers = answers => {
     return answers.map(answer => {
@@ -27,20 +27,23 @@ const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
     }
 
     return (
-        <div className="booksList col-lg-6">
+        <div className="booksList col-12">
             <h1> Вопрос №: {numberOfQuestion + 1}</h1>
             <h2>{data.title}</h2>
             <div className="card-body" >
                 {data.answers.map((item, index) => {
                     return (
                         <>
-                            <label htmlFor={`${item.answer} - ${numberOfQuestion}`}>{item.answer}</label>
-                            <input
-                                type="checkbox"
-                                placeholder="Enter your answer"
-                                id={`${item.answer} - ${numberOfQuestion}`}
-                                onChange={(e) => checkFunction(e, index)}
-                            />
+                            <div>
+                                <label htmlFor={`${item.answer} - ${numberOfQuestion}`} key={index + 232}>{item.answer}</label>
+                                <input
+                                    key={index + 222}
+                                    type="checkbox"
+                                    placeholder="Enter your answer"
+                                    id={`${item.answer} - ${numberOfQuestion}`}
+                                    onChange={(e) => checkFunction(e, index)}
+                                />
+                            </div>
                         </>
                     )
                 })

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../App.scss"
+import "./../Scss/App.scss";
 
 const RadioCard = ({ data, numberOfQuestion, setAnswer }) => {
     const result = (indexOfAnswerrArr) => {
@@ -7,7 +7,7 @@ const RadioCard = ({ data, numberOfQuestion, setAnswer }) => {
         setAnswer(answer.points)
     }
     return (
-        <div className="booksList col-lg-6">
+        <div className="booksList col-12">
             <h1> Вопрос №: {numberOfQuestion + 1}</h1>
             <h2>{data.title}</h2>
             <div className="card-body" >

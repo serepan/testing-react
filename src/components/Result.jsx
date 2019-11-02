@@ -6,13 +6,13 @@ const Result = () => {
     let answers = JSON.parse(localStorage.getItem('answers')) || [];
     console.log(answers)
 
-    let result = answers.length && answers
+    let result = answers
         .filter(el => typeof el === 'number')
-        .reduce((a, b) => a + b);
+        .reduce((a, b) => a + b, 0);
 
     return (
         <div className="row">
-            <div className="booksList col-lg-6" >
+            <div className="booksList col-12" >
                 <h1>Вы набрали {result} баллов из 10 возможных</h1>
                 <Link to='/' className="btn btn-secondary">Назад к выбору теста</Link>
             </div>

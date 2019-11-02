@@ -5,12 +5,13 @@ import CheckCard from "./CheckCard"
 import RadioCard from "./RadioCard"
 import ClickToResult from './ClickToResult'
 import { Link } from 'react-router-dom';
+import "./../Scss/App.scss";
 import Timer from "./Timer"
 
 
 const QuestionsContainer = ({ data }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));
-    const [seconds, setSeconds] = useState(20);
+    const [seconds, setSeconds] = useState(120);
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
@@ -27,8 +28,8 @@ const QuestionsContainer = ({ data }) => {
     }
 
     return (
-        <div className="row">
-            <div className="booksList col-lg-6">
+        <>
+            <div className="booksList col-12">
                 <h1>Странные вопросы</h1>
                 <Link className="btn btn-primary" to='/'>На главную</Link>
                 <Timer
@@ -43,28 +44,28 @@ const QuestionsContainer = ({ data }) => {
                     switch (item.type) {
                         case "TEXT":
                             return <TextCard
-                                key={index - 68}
+                                key={index + 68}
                                 data={item}
                                 numberOfQuestion={index}
                                 setAnswer={setAnswer(index)}
                             />
                         case "CHECKBOX":
                             return <CheckCard
-                                key={index - 68}
+                                key={index + 225 + []}
                                 data={item}
                                 numberOfQuestion={index}
                                 setAnswer={setAnswer(index)}
                             />
                         case "RADIO":
                             return <RadioCard
-                                key={index - 68}
+                                key={index + 68}
                                 data={item}
                                 numberOfQuestion={index}
                                 setAnswer={setAnswer(index)}
                             />
                         case "SELECT":
                             return <SelectCard
-                                key={index - 68}
+                                key={index + 68}
                                 data={item}
                                 numberOfQuestion={index}
                                 setAnswer={setAnswer(index)}
@@ -75,12 +76,7 @@ const QuestionsContainer = ({ data }) => {
             }
             <ClickToResult
                 answersModel={answersModel} />
-
-                {/* {seconds == 0 && Redirect} */}
-
-        </div>
-
-
+        </>
     )
 }
 
