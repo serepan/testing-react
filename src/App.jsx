@@ -7,7 +7,7 @@ import Buttons from './components/Buttons';
 import './Scss/App.scss';
 
 const App = () => {
-
+  
   return (
     <BrowserRouter>
       <div className="App">
