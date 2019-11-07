@@ -91,7 +91,6 @@ const QuestionsContainer = ({ data }) => {
                 setResult={setResult}
             />}
 
-
             {showModal && <Modal
                 setResult={setResult}
                 showModal={showModal}
