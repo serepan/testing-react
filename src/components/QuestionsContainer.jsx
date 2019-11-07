@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom';
 import "./../Scss/App.scss";
 import Timer from "./Timer";
 import Modal from "./Modal";
-import Result from "./Result"
-
-
+import Result from "./Result";
 
 const QuestionsContainer = ({ data }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));

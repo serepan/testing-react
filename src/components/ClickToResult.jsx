@@ -4,13 +4,13 @@ const ClickToResult = ({ answersModel, setShowModal, setResult, setIsActive }) =
 
     const setToLocalStorage = () => {
         let arr = [...answersModel]
-        localStorage.setItem('answers', JSON.stringify(arr));
-        setIsActive(false)
-
         let result = arr.filter(el => typeof el === 'number')
         if (result.length < arr.length) {
             setShowModal(true)
-        } else setResult(true)
+        } else
+            setResult(true)
+        setIsActive(false)
+        localStorage.setItem('answers', JSON.stringify(arr));
     }
 
     return (
