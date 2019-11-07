@@ -6,13 +6,18 @@ import RadioCard from "./RadioCard"
 import ClickToResult from './ClickToResult'
 import { Link } from 'react-router-dom';
 import "./../Scss/App.scss";
-import Timer from "./Timer"
+import Timer from "./Timer";
+import Modal from "./Modal";
+import Result from "./Result"
+
 
 
 const QuestionsContainer = ({ data }) => {
     const [answersModel, setAnswersModel] = useState(new Array(data.length));
     const [seconds, setSeconds] = useState(120);
     const [isActive, setIsActive] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [result, setResult] = useState(false);
 
     useEffect(() => {
         console.log(answersModel)
@@ -75,7 +80,27 @@ const QuestionsContainer = ({ data }) => {
                 })
             }
             <ClickToResult
-                answersModel={answersModel} />
+                answersModel={answersModel}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                result={result}
+                setResult={setResult}
+                setIsActive={setIsActive}
+            />
+
+            {result && <Result
+                result={result}
+                setResult={setResult}
+            />}
+
+
+            {showModal && <Modal
+                setResult={setResult}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                setIsActive={setIsActive}
+            />}
+
         </>
     )
 }

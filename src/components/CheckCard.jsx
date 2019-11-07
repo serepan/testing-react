@@ -34,10 +34,13 @@ const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
                 {data.answers.map((item, index) => {
                     return (
                         <>
-                            <div>
-                                <label htmlFor={`${item.answer} - ${numberOfQuestion}`} key={index + 232}>{item.answer}</label>
+                            <div key={index + 222}>
+                                <label
+                                    htmlFor={`${item.answer} - ${numberOfQuestion}`}
+                                    key={index + 232}> {item.answer}
+                                </label>
                                 <input
-                                    key={index + 222}
+                                    key={index + 2335}
                                     type="checkbox"
                                     placeholder="Enter your answer"
                                     id={`${item.answer} - ${numberOfQuestion}`}

@@ -97,6 +97,36 @@ body {
   }
 }
 
+.modal,
+.result {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.857);
+  color: red;
+
+  @include screen(sm) {
+    width: 550px;
+    height: 550px;
+  }
+
+  .btn {
+    color: black;
+    margin: 10px;
+  }
+
+}
+
 .btn {
   width: 200px;
   padding: 15px;

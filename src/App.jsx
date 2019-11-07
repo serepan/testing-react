@@ -2,12 +2,11 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import * as data from './data/questionsList';
 import QuestionsContainer from './components/QuestionsContainer';
-import Result from './components/Result';
 import Buttons from './components/Buttons';
 import './Scss/App.scss';
 
 const App = () => {
-  
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -36,14 +35,6 @@ const App = () => {
                 <QuestionsContainer
                   {...props}
                   data={data.questionsList2}
-                />
-              )}
-            />
-            <Route
-              path="/Result"
-              render={(props) => (
-                <Result
-                  {...props}
                 />
               )}
             />

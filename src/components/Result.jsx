@@ -15,7 +15,7 @@ const Result = () => {
 
     return (
         <div className="row">
-            <div className="booksList col-12" >
+            <div className="booksList col-12 result" >
                 <h1>Вы набрали {result} из 10 возможных баллов</h1>
                 <Link to='/' className="btn btn-secondary">Назад к выбору теста</Link>
             </div>
