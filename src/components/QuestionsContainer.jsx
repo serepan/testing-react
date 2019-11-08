@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import TextCard from "./TextCard"
 import SelectCard from "./SelectCard"
 import CheckCard from "./CheckCard"
@@ -16,10 +16,6 @@ const QuestionsContainer = ({ data }) => {
     const [isActive, setIsActive] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [result, setResult] = useState(false);
-
-    useEffect(() => {
-        console.log(answersModel)
-    }, [answersModel])
 
     const setAnswer = (index) => {
         return (pointerCount) => {

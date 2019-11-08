@@ -11,7 +11,6 @@ const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
     const [arrOfAnswers] = useState(initialAnswers(data.answers))
 
     const checkFunction = (e, index) => {
-        console.log(e.target.checked, index)
         const newArr = [...arrOfAnswers];
         newArr[index].isChecked = e.target.checked;
         let resultOfMistake = newArr
@@ -33,7 +32,7 @@ const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
             <div className="card-body" >
                 {data.answers.map((item, index) => {
                     return (
-                        <>
+                        <div key={index + 255}>
                             <div key={index + 222}>
                                 <label
                                     htmlFor={`${item.answer} - ${numberOfQuestion}`}
@@ -47,7 +46,7 @@ const CheckCard = ({ data, numberOfQuestion, setAnswer }) => {
                                     onChange={(e) => checkFunction(e, index)}
                                 />
                             </div>
-                        </>
+                        </div>
                     )
                 })
                 }

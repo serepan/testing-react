@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Result = () => {
 
     let answers = JSON.parse(localStorage.getItem('answers')) || [];
-    console.log(answers)
 
     let result = answers.filter(el => typeof el === 'number')
     if (result.length) {

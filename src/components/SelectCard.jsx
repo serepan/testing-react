@@ -14,7 +14,7 @@ const SelectCard = ({ data, numberOfQuestion, setAnswer }) => {
                 <select onChange={(e) => result(e.target.value)}>
                     {data.answers.map((item, index) => {
                         return (
-                            <option value={index} key={data.title + Math.random(new Date().getMilliseconds())}>{item.answer}</option>
+                            <option value={index} key={index+2655}>{item.answer}</option>
                         )
                     })
                     }
